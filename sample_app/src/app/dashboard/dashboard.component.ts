@@ -15,7 +15,7 @@ export class DashboardComponent {
     } else {
       this.selectedMenu = menu;
     }
-    this.selectedSubMenu = null; 
+    this.selectedSubMenu = null; // Reset sub-menu selection
   }
 
   selectSubMenu(subMenu: string): void {
