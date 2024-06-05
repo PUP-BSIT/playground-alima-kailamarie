@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'sample_app';
+  currentView: string = 'login';
+
+  navigateTo(view: string) {
+    this.currentView = view;
+  }
 }

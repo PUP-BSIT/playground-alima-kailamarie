@@ -1,0 +1,76 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+  
+.logo {
+    font-size: 24px;
+  }
+  
+.university-name {
+    font-size: 18px;
+}
+  
+.user-info {
+    display: flex;
+    align-items: center;
+}
+  
+.user-info span {
+    margin-right: 10px;
+}
+  
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+  
+.container {
+    display: flex;
+}
+  
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+  
+.menu-item {
+    padding: 10px;
+    cursor: pointer;
+}
+  
+.menu-item.active, .menu-item:hover {
+    background-color: #ddd;
+}
+  
+.submenu {
+    padding-left: 20px;
+}
+  
+.submenu-item {
+    padding: 5px;
+    cursor: pointer;
+}
+  
+.submenu-item:hover {
+    background-color: #eee;
+}
+  
+.content {
+    flex: 1;
+    padding: 20px;
+}
+  
+.no-records {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+}
+  

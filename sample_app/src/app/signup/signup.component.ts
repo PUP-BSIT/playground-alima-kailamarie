@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -6,14 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-  email: string = '';
-  password: string = '';
+  firstname: string = '';
+  middlename: string = '';
+  lastname: string = '';
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   onSubmit() {
-    // For now, we'll just log the email and password
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
+    console.log('Firstname:', this.firstname);
+    console.log('Middlename:', this.middlename);
+    console.log('Lastname:', this.lastname);
+    // Handle signup logic here, then navigate to login or next step
+    this.router.navigate(['/signup-landing']);
+  }
+
+  navigateToLogin() {
+    this.router.navigate(['/login']);
   }
 }
