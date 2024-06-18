@@ -1,14 +1,20 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentView: string = 'login';
+  constructor(private router: Router) {}
 
-  navigateTo(view: string) {
-    this.currentView = view;
+  isAuthRoute(): boolean {
+    const authRoutes = ['/login', '/signup'];
+    return authRoutes.includes(this.router.url);
+  }
+
+  isDashboardRoute(): boolean {
+    return this.router.url === '/dashboard';
   }
 }
