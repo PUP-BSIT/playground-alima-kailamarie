@@ -1,0 +1,48 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+  
+  .example-container {
+    height: 100%;
+  }
+  
+  mat-sidenav-container {
+    height: 100%;
+  }
+  
+  mat-toolbar {
+    background-color: #1e7989;
+    color: #fff;
+  }
+  
+  mat-sidenav {
+    width: 225px;
+    background-color: #e5fdf9;
+  }
+  
+  mat-list-item {
+    cursor: pointer;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .submenu {
+    padding-left: 20px;
+  }
+  
+  .bottom-items {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  canvas {
+    max-width: 800px;
+    margin: 0 auto;
+  }  

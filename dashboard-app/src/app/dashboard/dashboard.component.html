@@ -1,0 +1,43 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+      <mat-toolbar>GRADEMATE</mat-toolbar>
+      <mat-nav-list>
+        <mat-list-item (click)="selectMenu('home')">Home</mat-list-item>
+        <mat-list-item (click)="toggleDropdown('courses')">
+          Courses
+          <span class="spacer"></span>
+          <mat-icon>{{ dropdowns['courses'] ? 'expand_less' : 'expand_more' }}</mat-icon>
+        </mat-list-item>
+        <div *ngIf="dropdowns['courses']" class="submenu">
+          <mat-list-item (click)="selectSubMenu('list-courses')">List of subjects/courses</mat-list-item>
+          <mat-list-item (click)="selectSubMenu('view-course-details')">View subject/course details</mat-list-item>
+        </div>
+        <mat-list-item (click)="selectMenu('input-grades')">Grade Entry</mat-list-item>
+        <mat-list-item (click)="selectMenu('account')">Account</mat-list-item>
+        <div class="bottom-items">
+          <mat-list-item (click)="selectMenu('darkmode')">Dark Mode</mat-list-item>
+          <mat-list-item (click)="selectMenu('logout')">Logout</mat-list-item>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <ng-container *ngIf="selectedMenu || selectedSubMenu">
+        <div *ngIf="selectedSubMenu === 'list-courses'">
+          <!-- Courses management logic here -->
+        </div>
+        <div *ngIf="selectedSubMenu === 'view-course-details'"></div>
+        <div *ngIf="selectedMenu === 'input-grades' && !selectedSubMenu">
+          <!-- Grades management logic here -->
+        </div>
+        <div *ngIf="selectedMenu === 'home'">
+          <div style="text-align: center;">
+            <h1>Progress Tracker</h1>
+            <canvas chart="bar" [data]="barChartData" [options]="barChartOptions" [type]="barChartType"></canvas>
+          </div>
+        </div>
+        <div *ngIf="selectedMenu === 'account'">
+          <!-- Account management logic here -->
+        </div>
+      </ng-container>
+    </mat-sidenav-content>
+</mat-sidenav-container>  
