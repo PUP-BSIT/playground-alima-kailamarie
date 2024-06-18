@@ -187,3 +187,9 @@ button[disabled] {
   background: #FFFFFF;
   color: #1163ef;
 }
+
+.error-message {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 1px;
+}

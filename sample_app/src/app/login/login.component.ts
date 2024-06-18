@@ -43,7 +43,19 @@ export class LoginComponent {
           console.log('Login error', error);
         }
       });
+    } else {
+      this.showValidationErrors();
     }
+  }
+
+  showValidationErrors() {
+    Object.keys(this.loginForm.controls).forEach(field => {
+      const control = this.loginForm.get(field);
+      if (control && control.invalid) {
+        control.markAsTouched({ onlySelf: true });
+      }
+    });
+    alert('Please fill out all required fields correctly.');
   }
 
   onForgotPassword(event: Event) {
