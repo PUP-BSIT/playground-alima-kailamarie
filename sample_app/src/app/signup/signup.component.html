@@ -1,23 +1,26 @@
 <div class="container">
-    <div class="right">
-      <h2>Welcome Back!</h2>
-      <p>Your personalized academic companion is here to help you take control 
-          of your grades and stay on top of your academic journey.</p>
-      <button (click)="navigateToLogin()">Sign In</button>
-    </div>
-    <div class="left">
-      <h2>Create an account</h2>
-      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-        <input type="text" placeholder="Firstname" formControlName="first_name" />
-        <input type="text" placeholder="Lastname" formControlName="last_name" />
-        <input type="text" placeholder="Username" formControlName="username" />
-        <input type="email" placeholder="Email" formControlName="email" />
-        <input type="date" placeholder="Birthday" formControlName="birthday" />
-        <input type="text" placeholder="Sex" formControlName="sex" />
-        <input type="password" placeholder="Password" formControlName="password" />
-        <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" />
-        <input type="text" placeholder="University" formControlName="university" />
-        <button type="submit" [disabled]="signupForm.invalid">Submit</button>
-      </form>
-    </div>
-</div>  
+  <div class="right">
+    <h2>Welcome Back!</h2>
+    <p>Your personalized academic companion is here to help you take control 
+        of your grades and stay on top of your academic journey.</p>
+    <button (click)="navigateToLogin()">Sign In</button>
+  </div>
+  <div class="left">
+    <h2>Create an account</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <input type="text" placeholder="Firstname" formControlName="first_name"/>
+      <input type="text" placeholder="Lastname" formControlName="last_name"/>
+      <input type="text" placeholder="Username" formControlName="username"/>
+      <input type="email" placeholder="Email" formControlName="email"/>
+      <input type="date" placeholder="Birthday" formControlName="birthday"/>
+      <input type="text" placeholder="Sex" formControlName="sex"/>
+      <input type="password" placeholder="Password" 
+          formControlName="password"/>
+      <input type="password" placeholder="Confirm Password" 
+          formControlName="confirmPassword" />
+      <input type="text" placeholder="University" 
+          formControlName="university"/>
+      <button type="submit" [disabled]="signupForm.invalid">Submit</button>
+    </form>
+  </div>
+</div>
