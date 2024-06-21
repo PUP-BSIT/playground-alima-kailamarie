@@ -31,7 +31,7 @@ export class LoginComponent {
           if (response.message === 'success') {
             console.log('Login successful', response);
             // Set the logged-in username
-            const username = this.loginForm.value.email; // Assuming you use email as the username
+            const username = this.loginForm.value.email;
             this.authService.setLoggedInUsername(username);
             console.log('Setting logged-in username:', username);
             this.router.navigate(['/dashboard']);
