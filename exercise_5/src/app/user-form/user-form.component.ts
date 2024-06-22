@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-form',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class UserFormComponent {
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private userService: UserService) {
     this.userForm = this.fb.group({
       lastName: ['', Validators.required],
       givenName: ['', Validators.required],
@@ -19,10 +20,8 @@ export class UserFormComponent {
 
   onSubmit() {
     if (this.userForm.valid) {
-      console.log('Form Submitted', this.userForm.value);
-
-    } else {
-      console.log('Form is invalid');
+      this.userService.addUser(this.userForm.value);
+      this.userForm.reset();
     }
   }
 }
